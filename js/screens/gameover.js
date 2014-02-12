@@ -97,9 +97,9 @@ game.GameOverScreen = me.ScreenObject.extend({
           // renderable
           this.parent(new me.Vector2d(), 100, 100);
           this.font = new me.Font('Arial Black', 40, 'black', 'left');
-          this.score = 'Final Score: ' + game.data.score.toString();
-          this.timer = 'Steps: ' + Math.round(game.data.timer).toString();
-          this.topSteps= 'Larger Step: ' + me.save.topSteps.toString();
+         // this.score = 'Final Score: ' + game.data.score.toString();
+          this.timer = 'Score: ' + Math.round(game.data.timer).toString();
+          this.topSteps= 'High: ' + me.save.topSteps.toString();
       },
 
       update : function () {
@@ -110,14 +110,9 @@ game.GameOverScreen = me.ScreenObject.extend({
         var stepsText = this.font.measureText(context, this.timer);
         var topStepsText = this.font.measureText(context, this.topSteps);
 
-        var scoreText = this.font.measureText(context, this.score);
+      //  var scoreText = this.font.measureText(context, this.score);
         //score
-        this.font.draw(
-            context,
-            this.score,
-            me.game.viewport.width/2 - scoreText.width/2,
-            me.game.viewport.height/2
-        );
+      
         //steps
         this.font.draw(
             context,
